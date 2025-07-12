@@ -1,0 +1,39 @@
+
+
+<div class="container">
+  <h2>Create New Tour Package</h2>
+  <form (ngSubmit)="onSubmit()">
+
+    <label>Name:</label>
+    <input type="text" [(ngModel)]="newPackage.name" name="name" required />
+
+    <label>Description:</label>
+    <textarea [(ngModel)]="newPackage.description" name="description" required></textarea>
+
+    <label>Price:</label>
+    <input type="number" [(ngModel)]="newPackage.price" name="price" required />
+
+    <label>Duration (days):</label>
+    <input type="number" [(ngModel)]="newPackage.durationDays" name="durationDays" required />
+
+    <label>Destination:</label>
+    <input type="text" [(ngModel)]="newPackage.destination" name="destination" required />
+
+    <button type="submit">Add Package</button>
+  </form>
+
+  <hr />
+
+  <h3>Available Tour Packages</h3>
+  <ul>
+    <li *ngFor="let pkg of tourPackages">
+      <strong>{{ pkg.name }}</strong> - {{ pkg.destination }} ({{ pkg.durationDays }} days) - ₹{{ pkg.price }}
+      <br />
+      {{ pkg.description }}
+      <button (click)="deleteTourPackage(pkg.packageId!)">Delete</button>
+
+    </li>
+  </ul>
+</div>
+
+

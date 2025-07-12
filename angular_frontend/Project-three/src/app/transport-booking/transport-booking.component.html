@@ -1,0 +1,60 @@
+<div class="container">
+  <h2>Add Transport Booking</h2>
+  <form (ngSubmit)="onSubmit()">
+
+    <label>Booking:</label>
+    <select [(ngModel)]="newBooking.bookingId" name="bookingId">
+      <option *ngFor="let b of bookings" [value]="b.bookingId">
+        Booking #{{ b.bookingId }}
+      </option>
+    </select>
+
+    <label>Transport:</label>
+    <select [(ngModel)]="newBooking.transportId" name="transportId" required>
+      <option *ngFor="let t of transports" [value]="t.transportId">
+        {{ t.type }} - {{ t.provider }}
+      </option>
+    </select>
+
+    <label>Departure Date:</label>
+    <input type="date" [(ngModel)]="newBooking.departureDate" name="departureDate" required />
+
+    <label>Return Date:</label>
+    <input type="date" [(ngModel)]="newBooking.arrivalDate" name="arrivalDate" required />
+
+    <label>Number of Seats:</label>
+    <input type="number" [(ngModel)]="newBooking.numSeats" name="numSeats" required />
+
+    <button type="submit">Book Transport</button>
+  </form>
+
+  <hr />
+
+  <!-- <h3>All Transport Bookings</h3>
+  <table>
+    <tr>
+      <th>ID</th>
+      <th>Booking ID</th>
+      <th>Transport ID</th>
+      <th>Departure</th>
+      <th>Arrival</th>
+      <th>Seats</th>
+    </tr>
+    <tr *ngFor="let tb of transportBookings">
+      <td>{{ tb.transportBookingId }}</td>
+      <td>{{ tb.bookingId }}</td>
+      <td>{{ tb.transportId }}</td>
+      <td>{{ tb.departureDate }}</td>
+      <td>{{ tb.arrivalDate }}</td>
+      <td>{{ tb.numSeats }}</td>
+    </tr>
+     updete -->
+         <!-- <td>
+           <button *ngIf="tb.status == 'PENDING'" (click)="confirmBooking(tb.transportBookingId)">
+                     Confirm
+           </button>
+         </td>
+
+
+  </table>
+</div> -->

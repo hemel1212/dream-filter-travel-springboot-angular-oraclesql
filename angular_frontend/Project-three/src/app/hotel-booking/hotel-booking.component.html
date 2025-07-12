@@ -1,0 +1,46 @@
+<div class="container">
+  <h2>Hotel Booking</h2>
+  <form (ngSubmit)="onSubmit()">
+
+    <!-- <label>Booking:</label>
+    <select [(ngModel)]="hotelBooking.bookingId" name="bookingId" required>
+      <option *ngFor="let b of bookings" [value]="b.bookingId">
+        Booking #{{ b.bookingId }} - {{ b.startDate }} to {{ b.endDate }}
+      </option>
+    </select> -->
+
+    <label>Hotel:</label>
+    <select [(ngModel)]="hotelBooking.hotelId" name="hotelId" required>
+      <option *ngFor="let h of hotels" [value]="h.hotelId">
+        {{ h.name }} ({{ h.location }})
+      </option>
+    </select>
+
+    <label>Check-In Date:</label>
+    <input type="date" [(ngModel)]="hotelBooking.checkInDate" name="checkInDate" required>
+
+    <label>Check-Out Date:</label>
+    <input type="date" [(ngModel)]="hotelBooking.checkOutDate" name="checkOutDate" required>
+
+    <label>Number of Rooms:</label>
+    <input type="number" [(ngModel)]="hotelBooking.numRooms" name="numRooms" required>
+
+    <button type="submit">Book Hotel</button>
+  </form>
+
+  <hr>
+
+  <h3>Existing Hotel Bookings</h3>
+  <ul>
+    <li *ngFor="let hb of hotelBookingsDto">
+      <!-- Booking ID: {{ hb.bookingId }} | -->
+      Customer Name: {{ hb.customerName }} →
+      Customer Email: {{ hb.customerEmail }} →
+      Check In: {{ hb.checkInDate }} → 
+      Check Out: {{ hb.checkOutDate }} →
+      Rooms: {{ hb.numRooms }}
+    </li>
+  </ul>
+</div>
+
+<p>hotel-booking works!</p>

@@ -1,0 +1,64 @@
+<div class="container">
+  <h2>Create Booking</h2>
+
+  <!-- Display selected tour package info -->
+  
+
+  <!-- Booking form -->
+  <form (ngSubmit)="onSubmit()" #bookingForm="ngForm">
+
+    <label>Customer ID:</label>
+    <input type="number" name="customerId" [(ngModel)]="booking.customerId" required disabled="true"/>
+
+    <label>Package ID:</label>
+    <input type="number" name="packageId" [(ngModel)]="booking.packageId" readonly />
+
+    <label>Booking Date:</label>
+    <input type="date" name="bookingDate" [(ngModel)]="booking.bookingDate" required />
+
+    <label>Start Date:</label>
+    <input type="date" name="startDate" [(ngModel)]="booking.startDate" required />
+
+    <label>End Date:</label>
+    <input type="date" name="endDate" [(ngModel)]="booking.endDate" required />
+
+    <label>Number of People:</label>
+    <input type="number" name="numPeople" [(ngModel)]="booking.numPeople" required (input)="updateTotal()" />
+
+    <label>Status:</label>
+    <input type="text" name="status" [(ngModel)]="booking.status" required />
+
+    <label>Total Amount:</label>
+    <input type="number" name="totalAmount" [(ngModel)]="booking.totalAmount" readonly />
+
+    <button type="submit">Save Booking</button>
+  </form>
+</div>
+
+
+<!-- Recent Transactions -->
+    <div class="recent-transactions">
+        <h3>Recent Transactions</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Customer ID</th>
+                    <th>Package ID</th>
+                    <th>Number of People</th>
+                    <th>Total Amount</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let b of bookings">
+                    <td>#{{ b.bookingId }}</td>
+                    <td>{{ b.customerId }}</td>
+                    <td>{{ b.packageId }}</td>
+                    <td>{{ b.numPeople }}</td>
+                    <td>{{ b.totalAmount }}</td>
+                    
+                </tr>
+            </tbody>
+        </table>
+    </div>
+

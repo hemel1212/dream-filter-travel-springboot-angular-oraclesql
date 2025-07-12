@@ -1,0 +1,101 @@
+.navs{
+    width: 100%;
+    height: 17vh;
+    background: #0e6a98;
+}
+.left{
+    max-width: 1200px;
+    margin-left: 147px;
+    padding: 9px 0
+
+}
+.left a{
+    color: #ffff;
+    list-style: none;
+    text-decoration: none;
+    font-size: 30px;
+    letter-spacing: 2;
+}
+.right{
+    display: flex;
+}
+.right .list-icon{
+    width: 9.5%;
+    text-align: center;
+}
+.right .list-icon .menu-list{
+    color: #fff;
+    font-size: 36px;
+    /* margin-left: 35px; */
+   
+}
+.right ul{
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    /* margin-right: 15px; */
+    width: 89%;
+    padding: 0;
+    margin: 0;
+}
+.right ul li{
+    list-style: none;
+}
+.right ul li a{
+    color:#ffff;
+    text-decoration: none;
+}
+
+
+
+/* Sidebar Styling */
+#sidebarMenu {
+    width: 250px;
+    background-color: #212529; /* Bootstrap dark */
+    border-right: 1px solid #343a40;
+  }
+  
+  /* Header Styling */
+  #sidebarMenu .offcanvas-header {
+    border-bottom: 1px solid #343a40;
+    padding: 1rem 1.25rem;
+  }
+  
+  /* Title Styling */
+  #sidebarMenu .offcanvas-title {
+    font-size: 1.25rem;
+    color: #ffffff;
+  }
+  
+  /* Close Button */
+  #sidebarMenu .btn-close-white {
+    filter: invert(1);
+  }
+  
+  /* Sidebar Body */
+  #sidebarMenu .offcanvas-body {
+    padding: 1rem;
+  }
+  
+  /* Navigation Links */
+  #sidebarMenu .nav-link {
+    padding: 0.75rem 1rem;
+    font-size: 1rem;
+    transition: background-color 0.3s ease, padding-left 0.3s ease;
+  }
+  
+  /* Hover & Active Effects */
+  #sidebarMenu .nav-link:hover,
+  #sidebarMenu .nav-link:focus {
+    background-color: #343a40;
+    padding-left: 1.25rem;
+    color: #ffffff;
+    text-decoration: none;
+  }
+  
+  /* Optional: Make active link look different */
+  #sidebarMenu .nav-link.active {
+    background-color: #495057;
+    font-weight: bold;
+  }
+  

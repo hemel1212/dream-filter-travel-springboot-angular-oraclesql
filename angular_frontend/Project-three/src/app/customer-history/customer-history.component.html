@@ -1,0 +1,20 @@
+  <h3>All Transport Bookings</h3>
+  <table>
+    <tr>
+      <th>ID</th>
+      <th>Booking ID</th>
+      <th>Transport ID</th>
+      <th>Departure</th>
+      <th>Arrival</th>
+      <th>Seats</th>
+    </tr>
+    <tr *ngFor="let tb of transportBookings">
+      <td>{{ tb.transportBookingId }}</td>
+      <td>{{ tb.bookingId }}</td>
+      <td>{{ tb.transportId }}</td>
+      <td>{{ tb.departureDate }}</td>
+      <td>{{ tb.arrivalDate }}</td>
+      <td>{{ tb.numSeats }}</td>
+    </tr>
+  </table>
+<button class="btn btn-success">Dowenload Pdf</button>

@@ -1,0 +1,34 @@
+<div class="container">
+  <h2>Add Itinerary Entry</h2>
+  <form (ngSubmit)="onSubmit()">
+
+    <label>Tour Package:</label>
+    <select [(ngModel)]="itinerary.packageId" name="packageId" required>
+      <option *ngFor="let p of tourPackages" [value]="p.packageId">
+        {{ p.name }}
+      </option>
+    </select>
+
+    <label>Day Number:</label>
+    <input type="number" [(ngModel)]="itinerary.dayNumber" name="dayNumber" min="1" required>
+
+    <label>Description:</label>
+    <input type="text" [(ngModel)]="itinerary.description" name="description" required>
+
+    <label>Location:</label>
+    <input type="text" [(ngModel)]="itinerary.location" name="location" required>
+
+    <button type="submit">Add Itinerary</button>
+  </form>
+
+  <hr>
+
+  <h3>Itineraries</h3>
+  <ul>
+    <li *ngFor="let i of itineraries">
+      <strong>Day {{ i.dayNumber }}</strong> – {{ i.description }} at {{ i.location }} (Package ID: {{ i.packageId }})
+    </li>
+  </ul>
+</div>
+
+<p>itinerary works!</p>

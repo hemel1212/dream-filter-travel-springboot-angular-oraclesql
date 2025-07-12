@@ -1,0 +1,63 @@
+<div class="back-g">
+  <h2 style="text-align:center; color: white; font-weight: 700;">Outside of the country</h2>
+  <div class="container p-3" style=" width: 981px;">
+  <div class="tour-cards">
+  <div class="tour-card" *ngFor="let tour of tourPackages">
+    <div class="card-icon">
+      <i class="bi bi-globe2"></i>
+    </div>
+    <h2>{{ tour.name }}</h2>
+    <p><i class="bi bi-geo-alt-fill"></i> {{ tour.destination }}</p>
+    <p><i class="bi bi-clock-fill"></i> {{ tour.durationDays }} days</p>
+    <p><i class="bi bi-cash-stack"></i> ${{ tour.price }}</p>
+    <p>{{ tour.description }}</p>
+    <p *ngIf="tour.createdAt">
+      <small><i class="bi bi-calendar-event-fill"></i> {{ tour.createdAt }}</small>
+    </p>
+    <button (click)="bookTour(tour)" class="book-btn">
+      <i class="bi bi-calendar-check"></i> Book Now
+    </button>
+  </div>
+</div>
+</div>
+<h2 style="text-align:center; color: white; font-weight: 700;"> Inside of the country</h2>
+
+<div class="tour-cards" style="display: flex; align-items: center; justify-content: center; padding: 10px;">
+
+  <div class="tour-card">
+    <h2>Cox's Bazar Beach Tour</h2>
+    <p><strong>Destinations:</strong> Cox's Bazar, Himchari, Inani Beach</p>
+    <p><strong>Duration:</strong> 4 days</p>
+    <p><strong>Price:</strong> ৳5,000</p>
+    <p>
+      Relax by the Bay of Bengal with this beach getaway from Dhaka. Cox’s Bazar offers golden beaches, fresh seafood, and stunning sunsets—perfect for families, couples, or friends looking to unwind.
+    </p>
+    <button class="book-now-btn">Book Now</button>
+  </div>
+
+  <div class="tour-card">
+    <h2>Sajek Adventure Tour</h2>
+    <p><strong>Destinations:</strong> Sajek Valley, Ruilui Para, Konglak Hill</p>
+    <p><strong>Duration:</strong> 4 days</p>
+    <p><strong>Price:</strong> ৳7,000</p>
+    <p>
+      Relax in tropical bliss with white-sand beaches, turquoise waters, and luxury island resorts. 
+      Perfect for honeymoons and total relaxation.
+    </p>
+    <button class="book-now-btn">Book Now</button>
+  </div>
+
+  <div class="tour-card">
+    <h2>Sundarban Tour</h2>
+    <p><strong>Destinations:</strong> Harbaria, Kotka, Kochikhali, Karamjol</p>
+    <p><strong>Duration:</strong> 6 days</p>
+    <p><strong>Price:</strong> ৳6,000</p>
+    <p>
+      Experience the wild beauty of the Sundarbans, home to the majestic Royal Bengal Tiger, spotted deer, crocodiles, and countless bird species. Cruise through rivers and creeks, walk deep forest trails, and explore one of the world’s most unique ecosystems.
+    </p>
+    <button class="book-now-btn">Book Now</button>
+  </div>
+
+</div>
+
+</div>

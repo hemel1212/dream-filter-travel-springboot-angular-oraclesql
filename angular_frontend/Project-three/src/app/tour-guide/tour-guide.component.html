@@ -1,0 +1,28 @@
+
+<div class="container">
+  <h2>Add Tour Guide</h2>
+  <form (ngSubmit)="onSubmit()">
+
+    <label>Name:</label>
+    <input type="text" [(ngModel)]="newGuide.name" name="name" required />
+
+    <label>Experience:</label>
+    <input type="text" [(ngModel)]="newGuide.experience" name="experience" required />
+
+    <label>Rating (out of 5):</label>
+    <input type="number" [(ngModel)]="newGuide.rating" name="rating" step="0.1" min="0" max="5" required />
+
+    <button type="submit">Add Guide</button>
+  </form>
+
+  <hr />
+
+  <h3>Tour Guides</h3>
+  <ul>
+    <li *ngFor="let guide of tourGuides">
+      <strong>{{ guide.name }}</strong> – {{ guide.experience }} (Rating: {{ guide.rating }}/5)
+    </li>
+  </ul>
+</div>
+
+<p>tour-guide works!</p>

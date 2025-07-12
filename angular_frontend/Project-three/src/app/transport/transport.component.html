@@ -1,0 +1,38 @@
+
+<div class="container">
+  <h2>Add Transport</h2>
+  <form (ngSubmit)="onSubmit()">
+
+    <label>Type:</label>
+    <select [(ngModel)]="newTransport.type" name="type" required>
+      <option value="Bus">Bus</option>
+      <option value="Train">Train</option>
+      <option value="Flight">Flight</option>
+    </select>
+
+    <label>Provider:</label>
+    <input type="text" [(ngModel)]="newTransport.provider" name="provider" required />
+
+    <label>Available Seat:</label>
+    <input type="number" [(ngModel)]="newTransport.availableSeat" name="availableSeat" required />
+
+    <label>Price:</label>
+    <input type="number" [(ngModel)]="newTransport.price" name="price" required />
+
+    <button type="submit">Add Transport</button>
+  </form>
+
+  <hr />
+
+  <h3>All Transports</h3>
+  <ul>
+    <li *ngFor="let transport of transports">
+      {{ transport.type }} - {{ transport.provider }} - ₹{{ transport.price }} ({{ transport.availableSeat }})
+      <button (click)="deleteTransports(transport.transportId!)">Delete</button>
+    </li>
+
+  </ul>
+</div>
+
+
+<p>transport works!ht</p>

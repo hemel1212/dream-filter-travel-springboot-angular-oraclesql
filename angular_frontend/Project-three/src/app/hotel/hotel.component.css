@@ -1,0 +1,126 @@
+/* Main container */
+.container {
+  max-width: 600px;
+  margin: 40px auto;
+  padding: 24px;
+  background-color: #f9fafb; /* Light gray background */
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Form title */
+.container h2 {
+  margin-bottom: 20px;
+  font-size: 1.5rem;
+  color: #1e293b;
+  border-bottom: 1px solid #e2e8f0;
+  padding-bottom: 8px;
+}
+
+/* Labels */
+form label {
+  display: block;
+  margin: 12px 0 6px;
+  font-weight: 600;
+  color: #374151;
+}
+
+/* Inputs */
+form input[type="text"],
+form input[type="number"] {
+  width: 100%;
+  padding: 10px 12px;
+  font-size: 1rem;
+  border: 1px solid #cbd5e1;
+  border-radius: 4px;
+  box-sizing: border-box;
+  transition: border-color 0.3s ease;
+}
+
+form input:focus {
+  border-color: #3b82f6;
+  background-color: #f0f9ff;
+  outline: none;
+}
+
+/* Submit button */
+form button[type="submit"] {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #10b981; /* Green */
+  color: white;
+  font-size: 1rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+form button[type="submit"]:hover {
+  background-color: #059669;
+}
+
+/* Divider */
+hr {
+  margin: 30px 0;
+  border-color: #e2e8f0;
+}
+
+/* Hotel list section */
+h3 {
+  font-size: 1.3rem;
+  margin-bottom: 12px;
+  color: #1f2937;
+}
+
+ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+li {
+  background-color: #f1f5f9;
+  margin-bottom: 10px;
+  padding: 12px 16px;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  color: #334155;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+/* Hotel list text and star */
+li strong {
+  color: #111827;
+}
+
+li button {
+  background-color: #ef4444; /* Red */
+  border: none;
+  padding: 6px 12px;
+  color: white;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.85rem;
+  transition: background-color 0.2s ease;
+}
+
+li button:hover {
+  background-color: #dc2626;
+}
+
+/* Responsive layout */
+@media (max-width: 500px) {
+  li {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  li button {
+    margin-top: 8px;
+  }
+}

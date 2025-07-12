@@ -1,0 +1,40 @@
+
+<div class="container">
+  <h2>Add Payment</h2>
+  <form (ngSubmit)="onSubmit()">
+
+    <label>Booking ID:</label>
+    <input type="number" [(ngModel)]="newPayment.bookingId" name="bookingId" required />
+
+    <label>Payment Date:</label>
+    <input type="date" [(ngModel)]="newPayment.paymentDate" name="paymentDate" required />
+
+    <label>Amount:</label>
+    <input type="number" [(ngModel)]="newPayment.amount" name="amount" required />
+
+    <label>Method:</label>
+    <input type="text" [(ngModel)]="newPayment.paymentMethod" name="paymentMethod" required />
+
+    <label>Status:</label>
+    <select [(ngModel)]="newPayment.paymentStatus" name="paymentStatus" required>
+      <option value="Completed">Completed</option>
+      <option value="Pending">Pending</option>
+      <option value="Failed">Failed</option>
+    </select>
+
+    <button type="submit">Add Payment</button>
+  </form>
+
+  <hr />
+
+  <h3>All Payments</h3>
+  <ul>
+    <li *ngFor="let payment of payments">
+      Booking #{{ payment.bookingId }} – ₹{{ payment.amount }} on {{ payment.paymentDate }}  
+      ({{ payment.paymentMethod }}, {{ payment.paymentStatus }})
+    </li>
+  </ul>
+</div>
+
+
+<p>payment works!</p>

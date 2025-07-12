@@ -1,0 +1,14 @@
+.container{
+    max-width: 1330px;
+    background-color: #fff;
+}
+/*left side*/
+.col-md-3{
+    background: linear-gradient(145deg, #F1F5F9, #F1F5F9);
+}
+.left-side{
+    height: 96vh;
+    /* background: #08A9AE; */
+    /* border-radius: 10px; */
+    
+}

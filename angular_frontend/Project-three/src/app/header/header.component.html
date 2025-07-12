@@ -1,0 +1,55 @@
+<div class="navs">
+  <div class="left">
+    <a href="/">Dream.Filters.Travel</a>
+  </div>
+  <div class="right">
+    <a data-bs-toggle="offcanvas" data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" class="list-icon"><i
+        class="bi bi-list menu-list"></i></a>
+    <ul class="d-flex justify-content-between">
+      <span class="d-flex gap-2">
+        <li><a routerLink="/choose-tour-package"><i class="bi bi-house-door"></i> Tour Package</a></li>
+        <li><a routerLink="/choose-transport"><i class="bi bi-airplane"></i> Transportation</a></li>
+        <li><a routerLink="/choose-hotel"><i class="bi bi-building"></i> Hotel</a></li>
+        <li><a routerLink="/choose-guide"><i class="bi bi-person-badge"></i> Guide</a></li>
+      </span>
+      <div class="search-box">
+        <input type="text" placeholder="Search..." id="search" name="search">
+        <button type="submit"><i class="bi bi-search"></i></button>
+        @if (isLoggedIn) {
+          <a class="nav-link text-white" href="#" (click)="logout()">🔓 Logout</a>
+        }
+
+      </div>
+    </ul>
+  </div>
+</div>
+
+
+
+<!-- Offcanvas Sidebar -->
+<div class="offcanvas offcanvas-start" tabindex="-1" id="sidebarMenu" aria-labelledby="sidebarMenuLabel"
+  style="background-color: #1e293b; color: white;">
+  <div class="offcanvas-header">
+    <h5 class="offcanvas-title" id="sidebarMenuLabel">📋 Menu</h5>
+    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+  </div>
+
+  <div class="offcanvas-body">
+    <ul class="nav flex-column">
+      <li class="nav-item">
+        <a class="nav-link text-white" (click)="showContent('home')">🏠 Home</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link text-white" (click)="showContent('about')">📖 About</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link text-white" (click)="showContent('contact')">📞 Contact</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link text-white" href="log-in">🔐 Login</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link text-white" href="customer">📝 Register</a>
+    </ul>
+  </div>
+</div>

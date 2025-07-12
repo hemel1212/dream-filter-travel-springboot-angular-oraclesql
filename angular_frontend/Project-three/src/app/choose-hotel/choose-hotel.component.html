@@ -1,0 +1,13 @@
+
+<div class="back-g">
+  <div class="hotel-cards">
+  <div class="hotel-card" *ngFor="let hotel of hotels">
+    <h2><i class="fas fa-hotel"></i> {{ hotel.name }}</h2>
+    <p><strong><i class="fas fa-user"></i> Name:</strong> {{ hotel.name }}</p>
+    <p><strong><i class="fas fa-map-marker-alt"></i> Duration:</strong> {{ hotel.location }} days</p>
+    <p><strong><i class="fas fa-dollar-sign"></i> Price:</strong> ${{ hotel.pricePerNight }}</p>
+    <p><strong><i class="fas fa-star"></i> Rating:</strong> {{ hotel.rating }}</p>
+    <button (click)="bookHotel(hotel)"><i class="fas fa-calendar-check"></i> Book Now</button>
+  </div>
+</div>
+</div>

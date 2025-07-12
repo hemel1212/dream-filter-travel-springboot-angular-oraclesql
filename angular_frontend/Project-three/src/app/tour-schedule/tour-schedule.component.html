@@ -1,0 +1,51 @@
+
+
+<div class="container">
+  <h2>Add Tour Schedule</h2>
+
+  <form (ngSubmit)="onSubmit()">
+    <label>Tour Package:</label>
+    <select [(ngModel)]="newSchedule.tourPackageId" name="tourPackageId" required>
+      <option *ngFor="let p of packages" [value]="p.packageId">
+        {{ p.name }} ({{ p.destination }})
+      </option>
+    </select>
+
+    <label>Tour Guide:</label>
+    <select [(ngModel)]="newSchedule.tourGuideId" name="tourGuideId" required>
+      <option *ngFor="let g of guides" [value]="g.guideId">
+        {{ g.name }} ({{ g.experience }})
+      </option>
+    </select>
+
+    <label>Tour Date:</label>
+    <input type="date" [(ngModel)]="newSchedule.tourDate" name="tourDate" required>
+
+    <label>Itinerary Details:</label>
+    <textarea [(ngModel)]="newSchedule.itineraryDetails" name="itineraryDetails" required></textarea>
+
+    <button type="submit">Add Schedule</button>
+  </form>
+
+  <hr />
+
+  <h3>Tour Schedule List</h3>
+  <table>
+    <tr>
+      <th>ID</th>
+      <th>Package ID</th>
+      <th>Guide ID</th>
+      <th>Date</th>
+      <th>Details</th>
+    </tr>
+    <tr *ngFor="let s of schedules">
+      <td>{{ s.scheduleId }}</td>
+      <td>{{ s.tourPackageId }}</td>
+      <td>{{ s.tourGuideId }}</td>
+      <td>{{ s.tourDate }}</td>
+      <td>{{ s.itineraryDetails }}</td>
+    </tr>
+  </table>
+</div>
+
+<p>tour-schedule works!</p>

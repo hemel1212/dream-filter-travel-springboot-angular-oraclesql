@@ -1,0 +1,25 @@
+<div class="d-flex justify-content-center align-items-center my-3">
+  <div class="mb-3 d-flex gap-2 flex-wrap p-3 align-items-center">
+    <button class="btn btn-outline-dark" [class.active]="selectedStatus === 'ALL'" (click)="filterByStatus('ALL')">All</button>
+    <button class="btn btn-outline-primary" [class.active]="selectedStatus === 'Bus'" (click)="filterByStatus('Bus')">BUS</button>
+    <button class="btn btn-outline-info" [class.active]="selectedStatus === 'Flight'" (click)="filterByStatus('Flight')">Flight</button>
+    <button class="btn btn-outline-success" [class.active]="selectedStatus === 'Train'" (click)="filterByStatus('Train')">Train</button>
+  </div>
+</div>
+
+
+<div class="tour-cards">
+  <div class="tour-card" *ngFor="let transport of filteredOrders">
+    <h2>{{ transport.type }}</h2>
+    <p><strong>Provider:</strong> {{ transport.provider }}</p>
+    <p><strong>Availability:</strong> {{ transport.availableSeat }}</p>
+    <p><strong>Price:</strong> ${{ transport.price }}</p>
+    <!-- <p *ngIf="transports.createdAt">
+      <small>Created on: {{ transports.createdAt }}</small>
+    </p> -->
+    <button (click)="bookTour(transport)">Book Now</button>
+  </div>
+</div>
+
+
+

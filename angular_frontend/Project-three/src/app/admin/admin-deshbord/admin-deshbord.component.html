@@ -1,0 +1,82 @@
+<!-- Dashboard Content -->
+<div class="dashboard-content">
+    <h2>Dashboard</h2>
+
+    <!-- Key Metrics -->
+    <div class="metrics">
+        <div class="metric-card">
+            <h4>Number of transaction</h4>
+            <p>{{totalUser}}</p>
+            <i class="fas fa-users metric-icon"></i>
+        </div>
+        <div class="metric-card">
+            <h4>Total Transactions</h4>
+            <p>{{transaction}}</p>
+            <i class="fas fa-exchange-alt metric-icon"></i>
+        </div>
+        <div class="metric-card">
+            <h4>Revenue</h4>
+            <p>{{revenue}}</p>
+            <i class="fas fa-dollar-sign metric-icon"></i>
+        </div>
+    </div>
+
+    <!-- Recent Transactions -->
+<div class="recent-transactions">
+  <h3>Recent Transactions</h3>
+  <div class="table-container">
+    <table>
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Customer ID</th>
+          <th>Package ID</th>
+          <th>People</th>
+          <th>Total Amount</th>
+          <th>Status</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let b of bookings">
+          <td>#{{ b.bookingId }}</td>
+          <td>{{ b.customerId }}</td>
+          <td>{{ b.packageId }}</td>
+          <td>{{ b.numPeople }}</td>
+          <td>${{ b.totalAmount }}</td>
+          <td>
+            <span class="status" [ngClass]="{
+              'pending': b.status === 'PENDING',
+              'confirmed': b.status === 'CONFIRMED',
+              'cancelled': b.status === 'CANCELLED'
+            }">{{ b.status }}</span>
+          </td>
+          <td>
+            <button *ngIf="b.status === 'PENDING'" class="btn confirm" (click)="confirmBooking(b.bookingId)">
+              Confirm
+            </button>
+            <button *ngIf="b.status === 'PENDING'" class="btn delete" (click)="deleteBookings(b.customerId)">
+              Delete
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+
+
+    <!-- updete -->
+
+   
+
+
+    <!-- Quick Actions -->
+    <div class="quick-actions">
+        <h3>Quick Actions</h3>
+        <button><i class="fas fa-user-plus"></i> Add User</button>
+        <button><i class="fas fa-exchange-alt"></i> Process Transaction</button>
+        <button><i class="fas fa-file-alt"></i> Generate Report</button>
+    </div>
+</div>
